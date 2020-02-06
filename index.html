@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+
+    </title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="./jquery-ui-1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="./jquery-ui-1.12.1/jquery-ui.css">
+</head>
+
+<body class="view-body">
+
+    <section id="icon">
+        <ul>
+            <li>
+                <button class="container-flex column flex-align-center" id="recycle">
+                    <img src="./img/recycle_bin.png" alt="" width="40px" ">
+                    <label>Recycle Bin</label>
+                </button>
+            </li>
+            <li>
+                <button class="container-flex column flex-align-center" id="profile">
+                    <img src="./img/my-com.png" alt="" width="40px">
+                    <label>My Computer</label>
+                </button>
+            </li>
+            <li>
+                <button class="container-flex column flex-align-center" id="contact">
+                    <img src="./img/contact.png" alt="" width="40px" ">
+                    <label>Contact</label>
+                </button>
+            </li>
+            <li>
+                <button class="container-flex column flex-align-center" id="lib">
+                    <img src="./img/dir.png" alt="" width="40px" ">
+                    <label>My Library</label>
+                </button>
+            </li>
+            <li>
+                <button class="container-flex column flex-align-center" id="bio">
+                    <img src="./img/bio.png" alt="" width="40px" ">
+                    <label>Bio</label>
+                </button>
+            </li>
+        </ul>
+    </section>
+
+    <footer>
+        <nav class=" nav-bar-sb flex-align-center flex-just-space-between">
+            <div id="start">
+                <button class="container-flex flex-just-center flex-align-center" id="shut-down">
+                    <img src="./img/win-98.png" alt="" width="40px" ">
+                    <label>Start</label>
+                </button>
+            </div>
+
+            <ul class="nav-inline-block container-flex flex-just-center flex-align-center">
+                <li>
+                    <img src="./img/hourglass.png" width="15px">
+                </li>
+                <li>
+                    2:26 AM
+                </li>
+            </ul>
+        </nav>
+    </footer>
+
+    <!-- all modal -->
+
+    <div id="box-1" class="card-2" title="Profile">
+        <div class="card-app">
+            <ul>
+                <li>
+                    <button class="container-flex column flex-align-center ">
+                        <img src="./img/file.png" alt="">
+                        <label>File.txt</label>
+                    </button>
+
+                </li>
+                <li>
+                    <button class="container-flex column flex-align-center">
+                        <img src="./img/file.png" alt="">
+                        <label>File.txt</label>
+                    </button>
+                </li>
+                <li>
+                    <button class="container-flex column flex-align-center">
+                        <img src="./img/file.png" alt="">
+                        <label>File.txt</label>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="box-2" class="card-2" title="Contact">
+        <form action="">
+            <div class="container-flex column flex-align-center">
+                <label for="name">Name</label>
+                <input type="text" name="name" placeholder="Full Name" style="width: 80%;">
+                <br>
+                <label for="email">Email</label>
+                <input type="email" name="email" placeholder="Your Email" style="width: 80%;">
+                <br>
+                <label>Message</label>
+                <textarea style="width: 80%;" placeholder="Your Message"></textarea>
+                <br>
+                <input type="submit" class="submit" value="Send">
+            </div>
+        </form>
+    </div>
+
+    <div id="box-bio" class="" title="Contact">
+        <textarea style="min-width:100%;min-height: 200px;font-size: 14px;float: left;">
+            Nama: Raihan Ardianata
+            Lulusan: SMK
+            Tempat Tgl Lahir:Indonesia 
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </textarea>
+    </div>
+
+    <div id="box-shut-down" class="card-2" title="Profile" style="cursor: pointer;">
+        <button id="#shut-down-click" class="container-flex column flex-align-center flex-just-center">
+            <img src="./img/shut-down.png" alt="" width="60px">
+            <label>Power Off</label>
+        </button>
+
+    </div>
+
+
+</body>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $("#shut-down-click").click(function() {
+            $(".view-body").addClass(".bg-black");
+        })
+    });
+
+    $(document).ready(function() {
+        $("#box-1").dialog({
+            autoOpen: false,
+            show: {
+                effect: "",
+                duration: 0.5
+            },
+            hide: {
+                duration: 0.5
+            }
+        });
+        $("#box-2").dialog({
+            autoOpen: false,
+            show: {
+                effect: "",
+                duration: 0.5
+            },
+            hide: {
+                duration: 0.5
+            }
+        });
+        $("#box-bio").dialog({
+            autoOpen: false,
+            show: {
+                effect: "",
+                duration: 0.5
+            },
+            hide: {
+                duration: 0.5
+            }
+        });
+        $("#box-shut-down").dialog({
+            autoOpen: false,
+            show: {
+                effect: "",
+                duration: 0.5
+            },
+            hide: {
+                duration: 0.5
+            }
+        });
+
+
+
+        $("#lib").click(function() {
+            $("#box-1").dialog("open");
+        });
+        $("#contact").click(function() {
+            $("#box-2").dialog("open");
+        });
+        $("#bio").click(function() {
+            $("#box-bio").dialog("open");
+        });
+        $("#shut-down").click(function() {
+            $("#box-shut-down").dialog("open");
+        });
+    });
+</script>
+
+</html>
