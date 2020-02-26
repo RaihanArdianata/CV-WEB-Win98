@@ -45,6 +45,14 @@
                     <label>Bio</label>
                 </button>
             </li>
+            <li>
+                <a href="https://github.com/RaihanArdianata" style="text-decoration: none;">
+                    <button class="container-flex column flex-align-center" id="git">
+                        <img src="./img/github.png" alt="" width="40px" ">
+                        <label>Github</label>
+                    </button>
+                </a>
+            </li>
         </ul>
     </section>
 
@@ -56,13 +64,17 @@
                     <label>Start</label>
                 </button>
             </div>
-
+            <!-- untuk jam-->
             <ul class="nav-inline-block container-flex flex-just-center flex-align-center">
                 <li>
-                    <img src="./img/hourglass.png" width="15px">
+                    <img src="./img/hourglass.gif" width="15px">
                 </li>
                 <li>
-                    2:26 AM
+                    <div class="jam" style="display: flex;">
+                        <p id="jam"></p>
+                        <p id="">:</p>
+                        <p id="menit"></p>
+                    </div>
                 </li>
             </ul>
         </nav>
@@ -128,7 +140,6 @@
             <img src="./img/shut-down.png" alt="" width="60px">
             <label>Power Off</label>
         </button>
-
     </div>
 
 
@@ -198,6 +209,17 @@
             $("#box-shut-down").dialog("open");
         });
     });
+</script>
+<!--Timer-->
+<script>
+    window.setTimeout("waktu()", 1000);
+
+    function waktu() {
+        var waktu = new Date();
+        setTimeout("waktu()", 1000);
+        document.getElementById("jam").innerHTML = waktu.getHours();
+        document.getElementById("menit").innerHTML = waktu.getMinutes();
+    }
 </script>
 
 </html>
